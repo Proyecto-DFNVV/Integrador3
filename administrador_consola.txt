@@ -1,20 +1,53 @@
 
-def menu_admin(nombre):
+def menu_admin(nombre, lista_usuarios):  # La función recibe el nombre del admin y la lista de usuarios
     while True:
         print(f"\n--- Menú Admin - {nombre} ---")
         print("1. Ver todos los usuarios")
-        print("2. Eliminar un usuario")
-        print("3. Salir al menú principal")
+        print("2. Cambiar el rol de un usuario")
+        print("3. Eliminar un usuario")
+        print("4. Salir al menú principal")
 
         opcion = input("Elegí una opción: ")
 
         if opcion == "1":
-            print("Acá iría la lista de usuarios (todavía sin implementar).")
+            print("\n--- Lista de usuarios registrados ---")
+            if not lista_usuarios:
+                print("No hay usuarios registrados aún.")
+            else:
+                for usuario_key, datos_usuario in lista_usuarios.items():
+                    print(f"Usuario: {usuario_key} - Rol: {datos_usuario['rol']}")
         elif opcion == "2":
-            print("Funcionalidad para eliminar usuarios (a implementar).")
+            usuario_a_cambiar = input("Ingresá el nombre del usuario a cambiar de rol: ")
+            if usuario_a_cambiar in lista_usuarios:
+                # Evitar cambiar el rol del propio administrador logueado
+                if usuario_a_cambiar == nombre:
+                    print("No puedes cambiar tu propio rol desde aquí.")
+                else:
+                    nuevo_rol = input("Ingresá el nuevo rol ('admin' o 'estandar'): ").lower()
+                    if nuevo_rol in ["admin", "estandar"]:
+                        lista_usuarios[usuario_a_cambiar]["rol"] = nuevo_rol
+                        print(f"Rol de {usuario_a_cambiar} cambiado a {nuevo_rol}.")
+                    else:
+                        print("Rol inválido. Debe ser 'admin' o 'estandar'.")
+            else:
+                print("Usuario no encontrado.")
         elif opcion == "3":
+            usuario_a_eliminar = input("Ingresá el nombre del usuario a eliminar: ")
+            if usuario_a_eliminar in lista_usuarios:
+                # Evitar eliminar al propio administrador logueado
+                if usuario_a_eliminar != nombre:
+                    del lista_usuarios[usuario_a_eliminar]
+                    print(f"Usuario {usuario_a_eliminar} eliminado.")
+                else:
+                    print("No podés eliminar tu propio usuario mientras estás logueado.")
+            else:
+                print("Usuario no encontrado.")
+        elif opcion == "4":
             print("Volviendo al menú principal...")
             break
         else:
             print("Opción inválida.")
+
+
+
 
