@@ -1,7 +1,8 @@
 **Proyecto Biblioteca Cultural Compartida 📚✨**
 
 Este es un proyecto en desarrollo que busca crear una plataforma colaborativa centrada en la cultura. Se trata de un repositorio digital colaborativo dedicado a la difusión y preservación de obras literarias de autores de Córdoba Capital.
-Fomentar el acceso libre al conocimiento, preservar la identidad cultural local y brindar un espacio inclusivo para el desarrollo educativo, artístico y social de la comunidad. Esta iniciativa responde a la necesidad de espacios seguros donde niños, jóvenes y adultos puedan aprender, crear y compartir.
+
+Como motivadores iniciales se encuentran el acceso libre al conocimiento, preservar la identidad cultural local y brindar un espacio inclusivo para el desarrollo educativo, artístico y social de la comunidad. Esta iniciativa responde a la necesidad de espacios seguros donde niños, jóvenes y adultos puedan aprender, crear y compartir.
 
 **🎯 Objetivo**
 
