@@ -1,4 +1,4 @@
-def menu_estandar(nombre):
+def menu_estandar(nombre, lista_usuarios):
     while True:
         print(f"\n--- Menú Usuario Estándar - {nombre} ---")
         print("1. Ver perfil")
@@ -13,4 +13,3 @@ def menu_estandar(nombre):
             break
         else:
             print("Opción inválida.")
-
