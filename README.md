@@ -14,7 +14,9 @@ Luego de haber propuesto ideas sobre posibles clientes, posibles usuarios y cóm
 **🧠 Ideas iniciales**
 
 •	Promover la literatura de Córdoba Capital.
+
 •	Dar acceso libre a quienes requieran el material, ya sea con fines educativos o de recreación.
+
 •	Desarrollar un espacio en donde autores puedan compartir sus creaciones.
 
 **👥 Equipo**
