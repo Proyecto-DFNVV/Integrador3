@@ -1,0 +1,20 @@
+
+def menu_admin(nombre):
+    while True:
+        print(f"\n--- Menú Admin - {nombre} ---")
+        print("1. Ver todos los usuarios")
+        print("2. Eliminar un usuario")
+        print("3. Salir al menú principal")
+
+        opcion = input("Elegí una opción: ")
+
+        if opcion == "1":
+            print("Acá iría la lista de usuarios (todavía sin implementar).")
+        elif opcion == "2":
+            print("Funcionalidad para eliminar usuarios (a implementar).")
+        elif opcion == "3":
+            print("Volviendo al menú principal...")
+            break
+        else:
+            print("Opción inválida.")
+

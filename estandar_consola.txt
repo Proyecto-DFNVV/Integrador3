@@ -1,0 +1,16 @@
+def menu_estandar(nombre):
+    while True:
+        print(f"\n--- Menú Usuario Estándar - {nombre} ---")
+        print("1. Ver perfil")
+        print("2. Salir al menú principal")
+
+        opcion = input("Elegí una opción: ")
+
+        if opcion == "1":
+            print(f"Tu nombre de usuario es {nombre}")
+        elif opcion == "2":
+            print("Volviendo al menú principal...")
+            break
+        else:
+            print("Opción inválida.")
+
