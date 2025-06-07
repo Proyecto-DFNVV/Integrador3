@@ -1,19 +1,18 @@
 from usuarios import registrar_usuario, iniciar_sesion
 from administrador import menu_admin
-from estandar import menu_estandar
+from estandar import menu_estandar 
 
 def main():
-    lista_usuarios = lista_usuarios = {
-    "Florencia": {"contraseña": "flor123", "rol": "admin"},
-    "Valeria": {"contraseña": "valeria456", "rol": "estandar"},
-    "Najla": {"contraseña": "najla789", "rol": "estandar"},
-    "Daniela": {"contraseña": "daniela321", "rol": "estandar"},
-    "Veronica": {"contraseña": "vero654", "rol": "estandar"}
-}
-
+    usuarios = {
+        "Florencia": {"contraseña": "flor123", "rol": "admin"},
+        "Valeria": {"contraseña": "valeria456", "rol": "estandar"},
+        "Najla": {"contraseña": "najla789", "rol": "estandar"},
+        "Daniela": {"contraseña": "daniela321", "rol": "estandar"},
+        "Veronica": {"contraseña": "vero654", "rol": "estandar"}
+    }
 
     while True:
-        print("\n=== Menú Principal Biblioteca Virtual ""Con Tonada"" ===")
+        print("\n=== Menú Principal Biblioteca Virtual \"Con Tonada\" ===")
         print("1. Registrarse")
         print("2. Iniciar sesión")
         print("3. Salir")
@@ -21,13 +20,13 @@ def main():
         opcion = input("Elegí una opción: ")
 
         if opcion == "1":
-            registrar_usuario(lista_usuarios)
+            registrar_usuario(usuarios)
         elif opcion == "2":
-            nombre, rol = iniciar_sesion(lista_usuarios)
+            usuario, rol = iniciar_sesion(usuarios)
             if rol == "admin":
-                menu_admin(nombre, lista_usuarios)
+                menu_admin(usuario, usuarios) 
             elif rol == "estandar":
-                menu_estandar(nombre)
+                menu_estandar(usuario, usuarios) 
         elif opcion == "3":
             print("¡Hasta luego!")
             break
