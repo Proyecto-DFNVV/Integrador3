@@ -1,0 +1,60 @@
+import re
+from validaciones import *
+
+def registrar_usuario(usuarios):
+    while True:
+        nombre = input("Ingresa tu nombre completo: ")
+        if not validar_nombre(nombre):
+            print("El nombre no es válido, escribe solo letras")
+        else:
+            break
+
+    while True:
+        email = input("Ingresa tu email: ")
+        if not validar_email(email):
+            print("El email ingresado no es es válido")
+        elif email in usuarios:
+            print("El email ingresado ya está registrado")
+        else:
+            break
+
+    while True:
+        contraseña = input("Ingresa una contraseña que tenga como mínimo 6 caracteres,al menos una letras y al menos un números: ")
+        if not validar_contraseña(contraseña):
+            print("La contraseña que ingresaste no es válida")
+        else:
+            break
+
+    if email == "admin@admin.com" and contraseña == "admin123":
+        rol = "admin"
+    else:
+        rol = "estandar"
+
+    usuarios[email] = {
+        "nombre": nombre,
+        "contraseña": contraseña,
+        "rol": rol
+    }
+
+    print(f"Hola {nombre}! Guardamos tu registro con éxito como {rol}.")
+
+def iniciar_sesion(usuarios):
+    email = input("Email: ")
+    contraseña = input("Contraseña: ")
+
+    if email in usuarios:
+        if usuarios[email]["contraseña"] == contraseña:
+            nombre = usuarios[email]["nombre"]
+            rol = usuarios[email]["rol"]
+            print(f"Bienvenido/a {nombre} ({rol})")
+            return nombre, rol
+        else:
+            print("Contraseña incorrecta.")
+    else:
+        print("Email no registrado.")
+    return None, None
+
+def mostrar_usuarios(usuarios):
+    print("\n=== Usuarios Registrados ===")
+    for email, datos in usuarios.items():
+        print(f"{datos['nombre']} - {email} - {datos['rol']}")
